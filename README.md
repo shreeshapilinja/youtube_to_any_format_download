@@ -11,4 +11,4 @@ curl -X POST -d "url=https://youtube.com/somevideo&format=wav" -o output.wav htt
 
 
 GET request<br>
-curl -o output.wav https://vctube.pythonanywhere.com/?url=https://youtube.com/somevideo&format=wav 
+curl -o output.wav https://vctube.onrender.com/?url=https://youtube.com/somevideo&format=wav 
