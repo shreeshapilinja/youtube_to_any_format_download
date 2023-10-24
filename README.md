@@ -3,12 +3,12 @@ youtube video url to any format download
 
 <vctube.pythonanywhere.com>
 
-URL request
+URL request <br>
 https://vctube.pythonanywhere.com/?url=https://youtube.com/somevideo&format=wav
 
-POST request
+POST request<br>
 curl -X POST -d "url=https://youtube.com/somevideo&format=wav" -o output.wav https://vctube.pythonanywhere.com/
 
 
-GET request
+GET request<br>
 curl -o output.wav https://vctube.pythonanywhere.com/?url=https://youtube.com/somevideo&format=wav 
