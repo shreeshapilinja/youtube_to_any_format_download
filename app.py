@@ -6,6 +6,16 @@ os.makedirs('downloads', exist_ok=True)
 
 app = Flask(__name__)
 
+def clear_download_folder():
+    folder = 'downloads'
+    for filename in os.listdir(folder):
+        file_path = os.path.join(folder, filename)
+        try:
+            if os.path.isfile(file_path):
+                os.unlink(file_path)
+        except Exception as e:
+            print(f"Error deleting {file_path}: {e}")
+
 @app.route('/', methods=['GET', 'POST'])
 def home():
     url = None
@@ -24,6 +34,7 @@ def home():
         return render_template('index.html', error_message='')
 
     try:
+        clear_download_folder()  
         yt = YouTube(url)
 
         if format_choice == 'mp3':
